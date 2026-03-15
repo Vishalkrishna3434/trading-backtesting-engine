@@ -17,6 +17,6 @@ for i,t in enumerate(args.ticker,1):
   df=yf.download(t,period=args.period,progress=False)
   df.dropna(inplace=True)
   df.to_csv(f"data/{t}.csv")
-  print(f"[{i}/{len(args.ticker)}]->{len(df)}rows saved") 
+  print(f"[{i}/{len(args.ticker)}] -> {len(df)}rows saved") 
 
 print("All data downloaded")
