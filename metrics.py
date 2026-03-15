@@ -11,8 +11,8 @@ def compute_metrics(d,bps=10):
      
      d.dropna(inplace=True)
      
-     d['Cum_Market']=(1+d['Market_Ret']).cummprod()
-     d['Cum_Strategy']=(1+d['Strategy_Ret']).cummprod()
+     d['Cum_Market']=(1+d['Market_Ret']).cumprod()
+     d['Cum_Strategy']=(1+d['Strategy_Ret']).cumprod()
      
      sharpe= ( d['Strategy_Ret'].mean() / d['Strategy_Ret'].std() ) * np.sqrt(252)
      
@@ -20,8 +20,8 @@ def compute_metrics(d,bps=10):
      
      return d,{
        'sharpe' : round(sharpe,2),
-       'max_dd' : round(max_dd,2),
-       'strat_ret' : ((d['Cum_Strategy'].iloc[-1]-1) *100, 2),
-       'market_ret' : ((d['Cum_Market'].iloc[-1]-1) *100, 2),
+       'max_dd' : round(max_dd * 100 , 2),
+       'strat_ret' : round((d['Cum_Strategy'].iloc[-1]-1) *100, 2),
+       'market_ret' : round((d['Cum_Market'].iloc[-1]-1) *100, 2),
        'n_trades' : int(crossovers.sum() / 2)
      }
