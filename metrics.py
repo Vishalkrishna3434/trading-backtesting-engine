@@ -3,6 +3,8 @@ import numpy as np
 def compute_metrics(d,bps=10):
      d=d.copy()
      
+     d['Crossover'] = d['Signal'].diff().fillna(0)
+     
      d['Market_Ret'] = d['Close'].pct_change()
      d['Strategy_Ret']=d['Position']*d['Market_Ret']
      
