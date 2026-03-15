@@ -8,6 +8,6 @@ def compute_signals(df,short,long):
    df1.loc[df1['SMA_short']<df1['SMA_long'],'Signal'] =-1
    df1['Position']=df1['Signal'].shift(1) # to avoid look ahead bias
    return df1
- 
-   
+
+
      
