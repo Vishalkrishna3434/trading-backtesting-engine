@@ -5,7 +5,7 @@ import os
 def save_chart(d,ticker,metrics,out="charts"):
    os.makedirs(out,exist_ok=True)
 
-   fig,(ax1,ax2,ax3) = plt.subplots(3,1,figsize=(14,10),gridspec_kw={'height_ratios : ' [2,1,1]})
+   fig,(ax1,ax2,ax3) = plt.subplots(3,1,figsize=(14,10),gridspec_kw={'height_ratios' : [2,1,1]})
 
    fig.suptitle(f"{ticker} | sharpe {metrics['sharpe']} | Max DrawDown {metrics['max_dd']} | Total Trades {metrics['n_trades']}",fontsize=12,fontweight='bold')
 
@@ -25,8 +25,8 @@ def save_chart(d,ticker,metrics,out="charts"):
    ax1.scatter(sells.index, sells['Close'], marker='v', color='#F44336',s=70, zorder=5, label=f'Sell ({len(sells)})')
 
    ax1.set_ylabel("Price (USD)")
-   ax1.legend(fontsize=0.8)
-   ax1.plot()
+   ax1.legend(fontsize=8)
+   ax1.grid(alpha=0.3)
 
    # ── Panel 2: Equity curve vs buy-and-hold ────────────────────────────
 
