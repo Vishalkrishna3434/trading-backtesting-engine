@@ -26,7 +26,10 @@ changes identified as primary performance drivers.
 
 ## Sample Charts
 
+**META — Strategy +253.8% vs Buy & Hold +92.8%**
 ![META](charts/META.png)
+
+**NFLX — Strategy +96.8% vs Buy & Hold +89.9%**
 ![NFLX](charts/NFLX.png)
 
 ## Project Structure
