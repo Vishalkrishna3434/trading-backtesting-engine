@@ -1,3 +1,6 @@
 data/
 charts/
+__pycache__/
+*.pyc
+*.pyo
 results_summary.csv
